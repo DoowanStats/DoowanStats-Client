@@ -1,6 +1,9 @@
 import {useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
+import Link from 'next/link';
 
 function WinnerCards(props) {
+  const router = useRouter();
   const [card, setCard] = useState({
     "name": "loading",
     "icon": ["loading"],
@@ -14,6 +17,7 @@ function WinnerCards(props) {
       "league": props.cardInfo[0]
     })
   }, [props.cardInfo])
+
   return (
     <div id="winnerCard">
       <ul className="iconDisplays">
@@ -22,7 +26,9 @@ function WinnerCards(props) {
         })}
       </ul>
       <li id="winnerCardsLeagName">{card.league}</li>
-      <li id="winnerCardsTeamName">{card.name}</li>
+      <li id="winnerCardsTeamName">
+        <Link href={`/team/${encodeURIComponent(card.name)}`}>{card.name}</Link>
+      </li>
     </div>
   )
 }

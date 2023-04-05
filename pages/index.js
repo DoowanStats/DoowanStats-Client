@@ -1,9 +1,9 @@
 // domainName.com/
 import Link from 'next/link';
 import {Fragment} from 'react';
-import SearchBar from '../components/searchBar';
-import DisplaySeasonsComp from '../components/displaySeasonsComp';
-import DisplayCurrentSeasonInfo from '../components/displayCurrentSeasonInfo';
+import SearchBar from '../components/landingPageComp/searchBar';
+import DisplaySeasonsComp from '../components/landingPageComp/displaySeasonsComp';
+import DisplayCurrentSeasonInfo from '../components/landingPageComp/displayCurrentSeasonInfo';
 
 function LandingPage() {
   return (
