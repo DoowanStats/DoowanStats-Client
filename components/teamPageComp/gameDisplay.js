@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
+import GameLog from '../teamPageComp/gameLog';
+import ScoutLog from '../teamPageComp/scoutLog';
 
 function GameDisplay(props) {
-  const [game, setGame] = useState(true);
+  const [game, setGame] = useState(0);
 
   const fakeDataGameLog = [
     ["01/01/2023", "Team Name 2", "Team Stats", "Faker", "Gumayushi", "Oner", "Keria", "Zeus", "Bans Against Team"],
@@ -26,38 +28,18 @@ function GameDisplay(props) {
   }
 
   function GameContent() {
-    if (game) {
-      return (
-        <div>
-          <u1>
-            {fakeDataGameLog.map((content, i) => {
-              return (
-                <div key={i}>
-                  <u1>
-                    {content.map((seg, j) => {
-                      return <div key={j}>{seg}</div>
-                    })}
-                  </u1>
-                </div>
-              )
-            })}
-          </u1>
-        </div>
-      );
+    if (game == 0) {
+      return <GameLog data={fakeDataGameLog}/>
     } else {
-      return (
-        <div>
-          B
-        </div>
-      )
+      return <ScoutLog data={fakeDataScouting}/>
     }
   }
 
   return (
-    <div>
-      <div>
-        <button value={true} onClick={handleGameChange}>Game Log</button>
-        <button value={false} onClick={handleGameChange}>Scouting</button>
+    <div id="teamDisplay_gamePage">
+      <div id="teamDisplay_gamePage_buttonLayout">
+        <button id="gameLogButton" value={0} onClick={handleGameChange}>Game Log</button>
+        <button id="scoutingButton" value={1} onClick={handleGameChange}>Scouting</button>
       </div>
       <GameContent/>
     </div>

@@ -15,10 +15,11 @@ function TeamDisplay(props) {
   }, [props.teamName]);
 
   return (
-    <div>
-      <ul>
+    <div id="teamDisplay_teamPage">
+      <div id="teamDisplay_teamPage_Season">Vanguard Winter 22</div>
+      <ul id="playerNamesLayout">
         {name.map((playerName, i) => {
-          return <div key={i}>{playerName}</div>
+          return <div id="playerName" key={i}>{playerName}</div>
         })}
       </ul>
     </div>

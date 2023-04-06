@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {useState, useEffect} from 'react';
 import TeamDisplay from '../../components/teamPageComp/teamDisplay';
 import GameDisplay from '../../components/teamPageComp/gameDisplay';
+import StatDisplay from '../../components/teamPageComp/statDisplay'
 
 function TeamPage() {
   const router = useRouter();
@@ -25,7 +26,7 @@ function TeamPage() {
     } else if (displayType == 1) {
       return <GameDisplay teamName={pid}/>
     } else {
-      return <div>C</div>
+      return <StatDisplay teamName={pid}/>
     }
   }
 
@@ -34,11 +35,11 @@ function TeamPage() {
       <div id='topBar'>
         <div id='homeNav'><Link href='/'>Doowan.stats</Link></div>
       </div>
-      <div>{pid}</div>
-      <div>
-        <button value={0} onClick={handleDiplayChange}>Team</button>
-        <button value={1} onClick={handleDiplayChange}>Games</button>
-        <button value={2} onClick={handleDiplayChange}>Stats</button>
+      <div id='teamName_teamPage'>{pid}</div>
+      <div id="teamPage_buttonLayout">
+        <button id="teamButton" value={0} onClick={handleDiplayChange}>Team</button>
+        <button id="gamesButton" value={1} onClick={handleDiplayChange}>Games</button>
+        <button id="statsButton" value={2} onClick={handleDiplayChange}>Stats</button>
       </div>
       <DisplayContent/>
     </div>
