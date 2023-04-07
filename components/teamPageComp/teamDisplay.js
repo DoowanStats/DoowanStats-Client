@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import Link from 'next/link';
 
 function TeamDisplay(props) {
   const [name, setName] = useState(["Loading", "Loading", "Loading", "Loading"]);
@@ -19,7 +20,9 @@ function TeamDisplay(props) {
       <div id="teamDisplay_teamPage_Season">Vanguard Winter 22</div>
       <ul id="playerNamesLayout">
         {name.map((playerName, i) => {
-          return <div id="playerName" key={i}>{playerName}</div>
+          return <div id="playerName" key={i}>
+              <Link href={`/player/${encodeURIComponent(playerName)}`}>{playerName}</Link>
+          </div>
         })}
       </ul>
     </div>

@@ -13,7 +13,7 @@ function TeamPage() {
 
   const handleDiplayChange = (e) => {
     e.preventDefault();
-    setDisplayType(e.target.value);
+    setDisplayType(e.target.value ?? 0);
   }
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function TeamPage() {
     if (displayType == 0) {
       return <TeamDisplay teamName={pid}/>
     } else if (displayType == 1) {
-      return <GameDisplay teamName={pid}/>
+      return <GameDisplay teamName={pid} change={handleDiplayChange}/>
     } else {
       return <StatDisplay teamName={pid}/>
     }

@@ -29,7 +29,7 @@ function GameDisplay(props) {
 
   function GameContent() {
     if (game == 0) {
-      return <GameLog data={fakeDataGameLog}/>
+      return <GameLog data={fakeDataGameLog} change={props.change}/>
     } else {
       return <ScoutLog data={fakeDataScouting}/>
     }

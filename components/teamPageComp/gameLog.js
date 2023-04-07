@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import Link from 'next/link';
 
 function GameLog(props) {
   const [gameLogData, setGameLogData] = useState([["loading"]]);
@@ -12,9 +13,27 @@ function GameLog(props) {
         {gameLogData.map((content, i) => {
           return (
               <u1 id="gameLog_singleEntry" key={i}>
-                {content.map((seg, j) => {
-                  return <div id="gameLog_singleData" key={j}>{seg}</div>
-                })}
+                <div id="gameLog_singleData">{content[0]}</div>
+                <div id="gameLog_singleData" onClick={props.change}>
+                  <Link href={`/team/${encodeURIComponent(content[1])}`}>{content[1] ?? "Loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">{content[2]}</div>
+                <div id="gameLog_singleData">
+                  <Link href={`/player/${encodeURIComponent(content[3])}`}>{content[3] ?? "loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">
+                  <Link href={`/player/${encodeURIComponent(content[4])}`}>{content[4] ?? "loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">
+                  <Link href={`/player/${encodeURIComponent(content[5])}`}>{content[5] ?? "loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">
+                  <Link href={`/player/${encodeURIComponent(content[6])}`}>{content[6] ?? "loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">
+                  <Link href={`/player/${encodeURIComponent(content[7])}`}>{content[7] ?? "loading"}</Link>
+                </div>
+                <div id="gameLog_singleData">{content[8]}</div>
               </u1>
           )
         })}

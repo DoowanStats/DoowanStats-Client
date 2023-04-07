@@ -1,9 +1,7 @@
 import {useEffect, useState} from 'react';
-import {useRouter} from 'next/router';
 import Link from 'next/link';
 
 function WinnerCards(props) {
-  const router = useRouter();
   const [card, setCard] = useState({
     "name": "loading",
     "icon": ["loading"],

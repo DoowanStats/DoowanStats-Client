@@ -21,18 +21,18 @@ function StatDisplay(props) {
   }, [props.teamName])
 
   return (
-    <div>
-      <div>
-        <div>{statData.Season}</div>
-        <div>
+    <div id="teamDisplay_statPage">
+      <div id="teamDisplay_statPage_buttonLayout">
+        <div id="statPage_Season">{statData.Season}</div>
+        <div id="statPage_Record">
           <div>{statData.Record[0]} - {statData.Record[1]} - {statData.Record[2]}</div>
         </div>
-        <button>Winter 22</button>
+        <button id="statPage_ChangeSeason">Winter 22</button>
       </div>
-      <div>
-        <div>{statData.Combat}</div>
-        <div>{statData.Objective}</div>
-        <div>{statData.Income}</div>
+      <div id="teamDisplay_statPage_GeneralInfo">
+        <div className="statPage_GeneralCards">{statData.Combat}</div>
+        <div className="statPage_GeneralCards">{statData.Objective}</div>
+        <div className="statPage_GeneralCards">{statData.Income}</div>
       </div>
     </div>
   )

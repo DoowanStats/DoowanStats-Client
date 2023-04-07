@@ -178,3 +178,39 @@
   max-width: 20%;
   text-align: center;
 }
+
+#teamDisplay_statPage {
+  display: flex;
+  flex-direction: column;
+}
+
+#teamDisplay_statPage_buttonLayout {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 10px;
+  justify-content: space-between;
+  align-content: center;
+}
+
+#statPage_Season {
+  padding: 0px 0px 0px 10px;
+  font-size: 20px;
+}
+
+#statPage_Record {
+  font-size: 20px;
+}
+
+#teamDisplay_statPage_GeneralInfo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.statPage_GeneralCards {
+  min-width: 45%;
+  max-width: 45%;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
