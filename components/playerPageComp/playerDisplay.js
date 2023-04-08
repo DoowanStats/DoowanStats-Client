@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import Link from 'next/link';
 
 function PlayerDisplay(props) {
   const [playerData, setPlayerData] = useState({
@@ -75,24 +76,48 @@ function PlayerDisplay(props) {
   }, [props.player]);
 
   return (
-    <div>
-      <div>
-        <div>Top 5 Played Champs</div>
-        <u1>
+    <div id="playerOverallPage">
+      <div id="top5ChampsLayout">
+        <div id="top5title">Top 5 Played Champs</div>
+        <u1 id="top5playedChampIndv">
           {playerData["Top 5 Played"].map((champ, i) => {
-            return <div key={i}>{champ}</div>
+            return <div className="champPlayerOverall" key={i}>{champ}</div>
           })}
         </u1>
       </div>
-      <div>
-        <div>{playerData["Team"]}</div>
-        <div>{playerData["Position"]}</div>
-        <div>{playerData["KDA"]}</div>
-        <div>{playerData["VS"]}</div>
-        <div>{playerData["KP"]}</div>
-        <div>{playerData["Games"]}</div>
-        <div>{playerData["WR"]}</div>
-        <div>{playerData["GD@35"]}</div>
+      <div id="playerPagesOverallStats">
+        <div className="playerStatCards">
+          <div>Team</div>
+          <div><Link href={`/team/${encodeURIComponent(playerData["Team"])}`}>{playerData["Team"] ?? "Loading"}</Link></div>
+        </div>
+        <div className="playerStatCards">
+          <div>Position</div>
+          <div>{playerData["Position"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>KDA</div>
+          <div>{playerData["KDA"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>VS</div>
+          <div>{playerData["VS"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>KP</div>
+          <div>{playerData["KP"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>Games</div>
+          <div>{playerData["Games"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>WR</div>
+          <div>{playerData["WR"]}</div>
+        </div>
+        <div className="playerStatCards">
+          <div>GD@35</div>
+          <div>{playerData["GD@35"]}</div>
+        </div>
       </div>
     </div>
   )

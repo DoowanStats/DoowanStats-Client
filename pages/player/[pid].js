@@ -30,7 +30,7 @@ function PlayerPage() {
   }
 
   return (
-    <div>
+    <div id='playerPage'>
       <div id='topBar'>
         <div id='homeNav'><Link href='/'>Doowan.stats</Link></div>
       </div>
