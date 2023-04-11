@@ -10,7 +10,7 @@ function PlayerPage() {
   const [displayType, setDisplayType] = useState(0);
   const [name, setName] = useState("Loading");
 
-  const handleDiplayChange = (e) => {
+  const handleDisplayChange = (e) => {
     e.preventDefault();
     setDisplayType(e.target.value ?? 0);
   }
@@ -36,9 +36,9 @@ function PlayerPage() {
       </div>
       <div id="playerPage_playerName">{pid}</div>
       <div id="playerPage_buttonLayout">
-        <button id="playerButton" value={0} onClick={handleDiplayChange}>Player</button>
-        <button id="playerGamesamesButton" value={1} onClick={handleDiplayChange}>Games</button>
-        <button id="playerStatsButton" value={2} onClick={handleDiplayChange}>Stats</button>
+        <button id="playerButton" value={0} onClick={handleDisplayChange}>Player</button>
+        <button id="playerGamesamesButton" value={1} onClick={handleDisplayChange}>Games</button>
+        <button id="playerStatsButton" value={2} onClick={handleDisplayChange}>Stats</button>
       </div>
       <DisplayContent/>
     </div>

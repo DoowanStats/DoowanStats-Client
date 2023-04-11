@@ -17,7 +17,9 @@ function TeamDisplay(props) {
 
   return (
     <div id="teamDisplay_teamPage">
-      <div id="teamDisplay_teamPage_Season">Vanguard Winter 22</div>
+      <div id="teamDisplay_teamPage_Season">
+        <Link href={`/league/${encodeURIComponent('Vanguard Winter 22')}`}>Vanguard Winter 22</Link>
+      </div>
       <ul id="playerNamesLayout">
         {name.map((playerName, i) => {
           return <div id="playerName" key={i}>

@@ -23,7 +23,9 @@ function WinnerCards(props) {
           return <div key={i}>{iconImg}</div>
         })}
       </ul>
-      <li id="winnerCardsLeagName">{card.league}</li>
+      <li id="winnerCardsLeagName">
+        <Link href={`/league/${encodeURIComponent(card.league)}`}>{card.league}</Link>
+      </li>
       <li id="winnerCardsTeamName">
         <Link href={`/team/${encodeURIComponent(card.name)}`}>{card.name}</Link>
       </li>

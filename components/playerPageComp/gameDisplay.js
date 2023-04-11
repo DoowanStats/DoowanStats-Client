@@ -43,24 +43,22 @@ function GameDisplay(props) {
   }, [props.player])
 
   return (
-    <div>
-      <u1>
-        {gameDataPlayer.map((gameData, i) => {
-          return (
-            <div key={i}>
-              <div>{gameData[0]}</div>
-              <div>
-                <Link href={`/team/${encodeURIComponent(gameData[1])}`}>{gameData[1] ?? "Loading"}</Link>
-              </div>
-              <div>{gameData[2]}</div>
-              <div>{gameData[3]}</div>
-              <div>{gameData[4]}</div>
-              <div>{gameData[5]}</div>
+    <u1 id='playerGamePage'>
+      {gameDataPlayer.map((gameData, i) => {
+        return (
+          <div key={i} className='playerGameSingleEntry'>
+            <div className='playerGameSingleDataPiece'>{gameData[0]}</div>
+            <div className='playerGameSingleDataPiece'>
+              <Link href={`/team/${encodeURIComponent(gameData[1])}`}>{gameData[1] ?? "Loading"}</Link>
             </div>
-          )
-        })}
-      </u1>
-    </div>
+            <div className='playerGameSingleDataPiece'>{gameData[2]}</div>
+            <div className='playerGameSingleDataPiece'>{gameData[3]}</div>
+            <div className='playerGameSingleDataPiece'>{gameData[4]}</div>
+            <div className='playerGameSingleDataPiece'>{gameData[5]}</div>
+          </div>
+        )
+      })}
+    </u1>
   )
 }
 
